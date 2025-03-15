@@ -15,26 +15,41 @@ const Newsapp = () => {
     console.log(e.target.value);
     setInputSearch(e.target.value);
   }
+  const inputBtn=(e)=>{
+    console.log(e.target.value);
+    setInputSearch(e.target.value);
+    getData();
+  }
+  React.useEffect(()=>{
+    getData ();
+  },[]);
+
+  /**
+   Why We Use useEffect Hook
+    Data Fetching: In your Newsapp component, you use the useEffect hook to fetch 
+    data from an API when the component mounts. This ensures that the data is 
+    fetched as soon as the component is rendered.
+   */
   return (
     <div>
       <nav>
           <h1>Trendy News</h1>
-          <ul>
+          {/* <ul>
             <a href="">All News</a>
             <a href="">Trending</a>
-          </ul>
+          </ul> */}
 
           <div className="searchBar">
-            <input type="text" placeholder='Search News' onChange={handleInput}/>
+            <input type="text" placeholder='Search News' onChange={handleInput}  value={inputSearch}/>
             <button  onClick={getData}>Search</button>
           </div>
       </nav>
       <p className='head'>Stay Updated With Trendy News</p>
       <div className="categoryBtn">
-        <button>Politics</button>
-        <button>Sports</button>
-        <button>Entainment</button>
-        <button>Health</button>
+        <button onClick={inputBtn} value="politics">Politics</button>
+        <button onClick={inputBtn} value="sports">Sports</button>
+        <button onClick={inputBtn} value="entertainment">Entertainment</button>
+        <button onClick={inputBtn} value="health">Health</button>
       </div>
 
       
