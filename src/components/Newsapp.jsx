@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import NavBar from './NavBar';
 const Newsapp = () => {
   const API_KEY="1b3886ba52d1472dac5314501faa50ea";
   const [inputSearch,setInputSearch]=React.useState('india');
@@ -32,19 +33,8 @@ const Newsapp = () => {
    */
   return (
     <div>
-      <nav>
-          <h1>Trendy News</h1>
-          {/* <ul>
-            <a href="">All News</a>
-            <a href="">Trending</a>
-          </ul> */}
-
-          <div className="searchBar">
-            <input type="text" placeholder='Search News' onChange={handleInput}  value={inputSearch}/>
-            <button  onClick={getData}>Search</button>
-          </div>
-      </nav>
-      <p className='head'>Stay Updated With Trendy News</p>
+      <NavBar handleInput={handleInput} getData={getData} inputSearch={inputSearch}/>
+      <marquee direction="right">Stay Updated With Minute News</marquee>
       <div className="categoryBtn">
         <button onClick={inputBtn} value="politics">Politics</button>
         <button onClick={inputBtn} value="sports">Sports</button>

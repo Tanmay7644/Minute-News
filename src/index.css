@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(100deg, #232323, #434343); /* Shining black background */
+  color: white; /* Ensure text is readable on dark background */
 }
 
 code {
@@ -12,114 +14,171 @@ code {
     monospace;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: lightblue;
-    padding: 9px;
-}
-
-nav input{
-    width:250px;
-    text-decoration: none;
-    padding: 9px;
-    font-size: 18px;
-    border: none;
-}
-
-.searchBar{
+.navbar {
   display: flex;
   align-items: center;
-  gap: 11px;
-}
-
-nav button{
-  width: 70px;
-  height: 38px;
-  background-color: blue;
-  border: none;
-  border-radius: 2px;
+  justify-content: space-between;
+  background: rgba(74, 74, 74, 0.6); /* Grayish glass effect */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Glass effect for Safari */
+  padding: 10px 20px;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  border-radius: 15px; /* Add rounded corners */
+  margin: 10px; /* Add margin to see the rounded corners effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for blending effect */
 }
 
-nav ul{
-    display: flex;
-    gap: 11px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.head{
-  text-align: center;
+.logo img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #242425;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #000000;
+  scale: 1.1;
+}
+
+marquee {
   font-weight: 600;
   font-size: 23px;
 }
-.categoryBtn{
-  display: flex;
-  justify-content: center;
-  gap: 11px;
-}
-.categoryBtn button{
-  gap:11px;
-  width: 130px;
-  height: 33px;
-  background-color: rgb(255,108,108);
-  border: none;
-  outline: none;
-  font-size: 18px;
-  border-radius: 16px;
-  color: white;
-  cursor: pointer;
-  padding: 2px;
-}
 
 
-.card{
+
+.card {
   width: 320px;
-  box-shadow: 0px 4px 4px 4px rgb(255,255,255);
+  /* box-shadow:  4px 4px 10px rgb(35, 34, 34); */
   background-color: white;
-  border-radius: 3px;
+  background: rgba(74, 74, 74, 0.6); /* Grayish glass effect */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Glass effect for Safari */
   margin-top: 21px;
-  border: 1px solid rgb(236,236,236);
+  border: none;
+  border-radius: 10px;
+  /* padding: 2px; */
 }
 
-.card img{
+.card:hover {
+  box-shadow:  4px 4px 10px rgb(15, 15, 15);
+  scale: 1.05;
+}
+
+.card img {
   width: 100%;
   height: 180px;
-  border-top-left-radius: 3px;
-
-  border-top-right-radius: 3px;
-
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
-.card .title{
+
+.card .title {
   font-weight: 600;
   font-size: 18px;
   margin-top: -7px;
+  color: white;
 }
 
-.card .title:hover{
+.card .title:hover {
   border-bottom: 1px solid black;
   cursor: pointer;
 }
 
-.card .content{
+.card .content {
   padding: 9px;
+  color: white;
+  text-align: center; /* Center the content */
 }
 
-.card button{
-  background-color: rgb(29,162,214);
+.card button {
+  background-color: rgb(29, 162, 214);
   border: none;
   cursor: pointer;
-  width: 80px;
+  width: 100px;
   height: 28px;
   color: white;
   font-size: 13px;
-  border-radius: 3px;
+  border-radius: 10px;
+  background-color: #242425;
+  color: white;
+  margin: 0 auto; /* Center the button */
+  height: 36px;
 }
 
-.cardContainer{
+.card button:hover {
+  background-color: #000000;
+  scale: 1.1;
+  box-shadow: 2px 2px 5px rgb(81, 81, 81);
+}
+
+.cardContainer {
   display: flex;
   justify-content: center;
-  gap:41px;
+  gap: 41px;
   flex-wrap: wrap;
-
 }
+
+
+.categoryBtn {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+.categoryBtn button {
+  gap: 11px;
+  width: 160px;
+  height: 40px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.categoryBtn button:hover {
+  scale: 1.1;
+  box-shadow: 2px 2px 10px rgb(103, 102, 102);
+}
+
