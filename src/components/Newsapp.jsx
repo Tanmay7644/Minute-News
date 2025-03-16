@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from './Card'
-import NavBar from './NavBar';
+import NavBar from './NavBar'
 const Newsapp = () => {
-  const API_KEY="1b3886ba52d1472dac5314501faa50ea";
+  const API_KEY = "1b3886ba52d1472dac5314501faa50ea";
   const [inputSearch,setInputSearch]=React.useState('india');
   const [fetchedData,setFetchedData]=React.useState(null);
   const getData=async()=>{
@@ -34,7 +34,7 @@ const Newsapp = () => {
   return (
     <div>
       <NavBar handleInput={handleInput} getData={getData} inputSearch={inputSearch}/>
-      <marquee direction="right">Stay Updated With Minute News</marquee>
+      <marquee direction="left">Stay Updated With Minute News</marquee>
       <div className="categoryBtn">
         <button onClick={inputBtn} value="politics">Politics</button>
         <button onClick={inputBtn} value="sports">Sports</button>
